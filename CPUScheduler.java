@@ -146,7 +146,7 @@ public class CPUScheduler {
 	            // The job finished executing 
 	            if (runningJob.remainingBurst == 0) {
 	            	c.setRunning(currSec, null); // Null to indicate the CPU is idle
-	            	int turnaroundTime = runningJob.endTime - runningJob.arrivalTime;
+	            	int turnaroundTime = runningJob.endTime - runningJob.startTime;
 	            	System.out.println("--------------------------");
 	            	System.out.println("Job " + runningJob.jobId + " Turnaround Time: " + turnaroundTime);
 	            	System.out.println("--------------------------");
@@ -180,7 +180,7 @@ public class CPUScheduler {
 		        // Check if the running job is completed
 		        if (runningJob.remainingBurst == 0) {
 		        	c.setRunning(currSec, null);
-		        	int turnaroundTime = runningJob.endTime - runningJob.arrivalTime;
+		        	int turnaroundTime = runningJob.endTime - runningJob.startTime;
 		        	System.out.println("--------------------------");
 		        	System.out.println("Job " + runningJob.jobId + " Turnaround Time: " + turnaroundTime);
 		        	System.out.println("--------------------------");
